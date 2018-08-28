@@ -1,8 +1,7 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>3.0.10</Version>
+    <Version>3.0.12</Version>
     <Title>CitadeCore.Windows</Title>
     <Authors>Jesse Nicholson</Authors>
     <Company>Technik Empire</Company>
@@ -11,41 +10,36 @@
     <PackageLicenseUrl>https://raw.githubusercontent.com/TechnikEmpire/CitadelCore.Windows/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/TechnikEmpire/CitadelCore.Windows</PackageProjectUrl>
     <RepositoryUrl>https://github.com/TechnikEmpire/CitadelCore.Windows</RepositoryUrl>
-    <PackageReleaseNotes>Firewall requests now include the process ID, not just the name.</PackageReleaseNotes>
+    <PackageReleaseNotes>Update CitadelCore to 3.0.12</PackageReleaseNotes>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <AssemblyVersion>3.0.10.0</AssemblyVersion>
-    <FileVersion>3.0.10.0</FileVersion>
+    <AssemblyVersion>3.0.12.0</AssemblyVersion>
+    <FileVersion>3.0.12.0</FileVersion>
     <RepositoryType>git</RepositoryType>
     <PackageTags>proxy, filter, filtering, content filtering, content-filter, websocket proxy, http proxy, https proxy</PackageTags>
+    <PackageId>CloudVeil.CitadelCore.Windows</PackageId>
   </PropertyGroup>
-
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
     <DocumentationFile>bin\Release\netstandard2.0\CitadelCore.Windows.xml</DocumentationFile>
     <LangVersion>default</LangVersion>
   </PropertyGroup>
-
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
     <DocumentationFile>bin\Debug\netstandard2.0\CitadelCore.Windows.xml</DocumentationFile>
   </PropertyGroup>
-
   <ItemGroup Label="dotnet pack instructions">
     <Content Include="build\*.targets">
       <Pack>true</Pack>
       <PackagePath>build\</PackagePath>
     </Content>
   </ItemGroup>
-
   <ItemGroup>
     <PackageReference Include="CitadelCore" Version="3.0.10" />
     <PackageReference Include="WinDivertSharp" Version="1.4.3.2" />
   </ItemGroup>
-    
   <Target Name="CollectRuntimeOutputs" BeforeTargets="_GetPackageFiles">
     <!-- Collect these items inside a target that runs after build but before packaging. -->
-
     <ItemGroup>
       <Content Include="$(OutputPath)\*.pdb;">
         <Pack>true</Pack>
@@ -53,5 +47,4 @@
       </Content>
     </ItemGroup>
   </Target>
-
 </Project>
