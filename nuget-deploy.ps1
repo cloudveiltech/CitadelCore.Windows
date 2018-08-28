@@ -34,13 +34,8 @@ function Get-XmlNode([ xml ]$XmlDocument, [string]$NodePath, [string]$NamespaceU
     return $node
 }
 
-if($args.Length -eq 0) {
-    Write-Host "Usage: .\nuget-deploy.ps1 project-path.csproj"
-    exit
-}
-
 $currentLocation = Get-Location
-$projectFilePath = Join-Path $currentLocation $args[0]
+$projectFilePath = Join-Path $currentLocation "CitadelCore.Windows\CitadelCore.Windows.csproj"
 
 $msbuildPath = Find-MsBuild
 
